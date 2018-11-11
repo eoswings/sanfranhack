@@ -6,7 +6,13 @@
     </div>
     <div style="text-align:center">
       <div class="spacer" />
-      <img alt="Vue logo" src="../assets/woman.png" style="border-radius:50%; width:100px; height:100px;">
+      <div v-if="!loading">
+        <img alt="Vue logo" src="../assets/woman.png" style="border-radius:50%; width:100px; height:100px;">
+      </div>
+      <div v-else>
+        <v-btn color="primary" fab dark :loading="true">
+        </v-btn>
+      </div>
       <step1 v-if="step === 1"/>
       <step2 v-else-if="step === 2" :market="market"/>
       <step3 v-else-if="step === 3" :market="market" />
@@ -17,7 +23,7 @@
       <button class="back_button" v-if="step != 1" @click="step--">Back</button>
       <span v-if="step != 1">&nbsp; &nbsp; &nbsp;</span>
       <button class="next_button" v-if="step < 5" @click="step++">Next</button>
-      <button class="next_button" v-if="step === 5" @click="deploy()">Deploy</button>
+      <button class="next_button" :disabled="loading" v-if="step === 5" @click="deploy()">Deploy</button>
     </div>
   </div>
 </template>
@@ -36,6 +42,7 @@ export default {
   data() {
     return {
       step: 1,
+      loading: false,
       market: {
         name: 'California Craft Beer',
         description: 'Buy and sell the best craft and home brews of the region',
@@ -46,6 +53,7 @@ export default {
   },
   methods: {
     async deploy() {
+      this.loading = true
       let market = {
         id: Math.floor(Math.random() * 2 ** 64),
         creator: this.$store.state.account,

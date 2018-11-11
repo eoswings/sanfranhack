@@ -110,7 +110,6 @@
                     <td>{{ props.item.item }}</td>
                     <td>{{ props.item.name }}</td>
                     <td>{{ props.item.value }}</td>
-                    <td>See Detail</td>
                   </template>
                 </v-data-table>
               </v-flex>
@@ -121,6 +120,15 @@
     </div>
   </v-app>
 </template>
+
+<style>
+.v-list__tile__title {
+  font-size: 20px;
+}
+table.v-table tbody td {
+  font-size: 17px;
+}
+</style>
 
 <script>
 import { Doughnut } from 'vue-chartjs'
@@ -137,7 +145,7 @@ export default {
     var bgColor = [this.marketCreatorBgColor]
 
     for (var i = 0; i < this.nrStakeHolder; i++) {
-      data.push((1 / this.nrStakeHolder) * 100)
+      data.push((1 / this.nrStakeHolder) * 50)
       var greyFragment = (40 + i * 2).toString(16)
       bgColor.push('#' + greyFragment + greyFragment + greyFragment)
     }
@@ -159,9 +167,9 @@ export default {
 
   data: () => ({
     drawer: true,
-    marketCreatorEquity: 50,
+    marketCreatorEquity: 51,
     marketCreatorBgColor: '#fda53a',
-    nrStakeHolder: 50,
+    nrStakeHolder: 3,
     lineChart1Data: {
       datasets: [
         {
@@ -227,12 +235,6 @@ export default {
         align: 'left',
         sortable: false,
         value: 'value'
-      },
-      {
-        text: 'Detail',
-        align: 'left',
-        sortable: false,
-        value: 'detail'
       }
     ],
     latestSells: [
