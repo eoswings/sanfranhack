@@ -22,7 +22,7 @@
                   <v-img
                     class="white--text"
                     height="200px"
-                    src="https://images.unsplash.com/photo-1528505086635-4c69d5f10908?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e17f575045add065792c9bd73c2c6ef&auto=format&fit=crop&w=400&q=60"
+                    src="https://images.unsplash.com/photo-1518176258769-f227c798150e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c2f65a2019b066f34061dfe4afb41bb4&auto=format&fit=crop&w=400&q=60"
                   >
                     <v-container fill-height fluid>
                       <v-layout fill-height>
