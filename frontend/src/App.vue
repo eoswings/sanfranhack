@@ -24,6 +24,7 @@ export default {
 
 h1 {
   font-size: 50px;
+  margin-bottom:0.2em;
   color: #555;
 }
 
@@ -35,6 +36,7 @@ h2 {
 input, textarea {
   font-size:40px;
   padding:10px;
+  border:1px solid #ddd;
 }
 
 .next_button {
