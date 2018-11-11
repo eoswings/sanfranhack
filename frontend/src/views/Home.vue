@@ -22,21 +22,20 @@
                   <v-img
                     class="white--text"
                     height="200px"
-                    src="../assets/fm.png"
+                    src="https://images.unsplash.com/photo-1528505086635-4c69d5f10908?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e17f575045add065792c9bd73c2c6ef&auto=format&fit=crop&w=400&q=60"
                   >
                     <v-container fill-height fluid>
                       <v-layout fill-height>
                         <v-flex xs12 align-end flexbox>
-                          <span class="headline">Farmers Markets</span>
+                          <span class="headline">California Craft Beers</span>
                         </v-flex>
                       </v-layout>
                     </v-container>
                   </v-img>
                   <v-card-title>
                     <div>
-                      <span class="grey--text">3250 members</span><br />
-                      <span>Whitehaven Beach</span><br />
-                      <span>Whitsunday Island, Whitsunday Islands</span>
+                      <span class="grey--text">2 Members</span><br />
+                      <span>A market place for local craft brewers.</span>
                     </div>
                   </v-card-title>
                   <v-card-actions>
@@ -53,12 +52,12 @@
                   <v-img
                     class="white--text"
                     height="200px"
-                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                    src="https://images.unsplash.com/photo-1527016021513-b09758b777bd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f0ff89d00bb062148746339baf2bfc79&auto=format&fit=crop&w=400&q=60"
                   >
                     <v-container fill-height fluid>
                       <v-layout fill-height>
                         <v-flex xs12 align-end flexbox>
-                          <span class="headline">Second hand stores</span>
+                          <span class="headline">Second Hand Stores</span>
                         </v-flex>
                       </v-layout>
                     </v-container>
@@ -66,8 +65,7 @@
                   <v-card-title>
                     <div>
                       <span class="grey--text">872 members</span><br />
-                      <span>Whitehaven Beach</span><br />
-                      <span>Whitsunday Island, Whitsunday Islands</span>
+                      <span>A market place for used clothing.</span>
                     </div>
                   </v-card-title>
                   <v-card-actions>
@@ -84,7 +82,7 @@
                   <v-img
                     class="white--text"
                     height="200px"
-                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                    src="https://images.unsplash.com/photo-1527690789675-4ea7d8da4fe3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4c04b2389a38ee6886ceebba1f12f65c&auto=format&fit=crop&w=400&q=80"
                   >
                     <v-container fill-height fluid>
                       <v-layout fill-height>
@@ -96,9 +94,8 @@
                   </v-img>
                   <v-card-title>
                     <div>
-                      <span class="grey--text">95 members</span><br />
-                      <span>Whitehaven Beach</span><br />
-                      <span>Whitsunday Island, Whitsunday Islands</span>
+                      <span class="grey--text">4095 members</span><br />
+                      <span>Market for trading video game assets.</span>
                     </div>
                   </v-card-title>
                   <v-card-actions>
