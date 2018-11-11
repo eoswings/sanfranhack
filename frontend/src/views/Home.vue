@@ -43,12 +43,16 @@ export default {
   },
   methods: {
     async deploy() {
-      await this.$store.dispatch('createMarket', {
+      let market = {
         id: Math.floor(Math.random() * 2 ** 64),
         creator: this.$store.state.account,
         ...this.market,
         fee: this.market.fee * 100000
-      })
+      }
+      console.log(market)
+      await this.$store.dispatch('createMarket', market)
+
+      this.$router.push('/dashboard')
     }
   }
 }
