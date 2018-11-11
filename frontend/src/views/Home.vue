@@ -11,8 +11,6 @@
               <v-flex xs12 class="my-3">
                 <v-text-field
                   solo
-                  class="white--text"
-                  append-icon="search"
                   label="search..."
                 ></v-text-field>
               </v-flex>
