@@ -1,18 +1,24 @@
 <template>
 
   <div class="home">
-    <hr />
-    <div style="padding:20px;">&nbsp;</div>
-    <img alt="Vue logo" src="../assets/woman.png" style="border-radius:50%; width:100px; height:100px;">
-    <step1 v-if="step === 1"/>
-    <step2 v-else-if="step === 2"/>
-    <step3 v-else-if="step === 3"/>
-    <step4 v-else-if="step === 4"/>
-    <step5 v-else-if="step === 5"/>
-    <div class="spacer" />
-    <button class="button" @click="step--">Back</button>
-    &nbsp; &nbsp; &nbsp;
-    <button class="button" @click="step++">Next</button>
+    <div style="text-align:left; width:100%;">
+        <img src="../assets/logo.png" style="width:200px;">
+    </div>
+    <div style="text-align:center">
+      <div class="spacer" />
+      <img alt="Vue logo" src="../assets/woman.png" style="border-radius:50%; width:100px; height:100px;">
+      <step1 v-if="step === 1"/>
+      <step2 v-else-if="step === 2" :market="market"/>
+      <step3 v-else-if="step === 3" :market="market" />
+      <step4 v-else-if="step === 4" :market="market" />
+      <step5 v-else-if="step === 5" :market="market" />
+      <div class="spacer" />
+
+      <button class="back_button" v-if="step != 1" @click="step--">Back</button>
+      <span v-if="step != 1">&nbsp; &nbsp; &nbsp;</span>
+      <button class="next_button" v-if="step < 5" @click="step++">Next</button>
+      <button class="next_button" v-if="step === 5" @click="step=1">Deploy</button>
+    </div>
   </div>
 </template>
 
@@ -31,7 +37,8 @@ export default {
   components: { step1, step2, step3, step4, step5 },
   data() {
     return {
-      step: 1
+      step: 1,
+      market: {}
     }
   },
   methods: {

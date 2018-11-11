@@ -14,11 +14,11 @@ export default {
 </script>
 
 <style lang="scss">
+
 #app {
   font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #444;
 }
 
@@ -32,7 +32,13 @@ h2 {
   color: #333;
 }
 
+input, textarea {
+  font-size:40px;
+  padding:10px;
+}
+
 .next_button {
+
   -moz-box-shadow: inset 0px 1px 0px 0px #fce2c1;
   -webkit-box-shadow: inset 0px 1px 0px 0px #fce2c1;
   box-shadow: inset 0px 1px 0px 0px #fce2c1;
@@ -102,4 +108,16 @@ h2 {
 .underline {
   border-bottom: 1px dashed #ccc;
 }
+
+.fade-enter-active {
+  transition-delay:1s;
+  transition: opacity .5s;
+}
+.fade-leave-active {
+  transition: opacity .1s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 </style>
