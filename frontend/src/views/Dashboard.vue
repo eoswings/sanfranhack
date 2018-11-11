@@ -12,46 +12,46 @@
         <v-list>
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> <a href="#" style="color:#555">Settings</a> </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">settings</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
               <v-list-tile-title>
-                <a href="#" style="color:#555">Moderation</a>
+                <a href="#" style="color:#555">moderation</a>
               </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> <a href="#" style="color:#555">Dispute</a> </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">dispute</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> <a href="#" style="color:#555">Reviews</a> </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">reviews</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> <a href="#" style="color:#555">Voting</a> </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">voting</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
               <v-list-tile-content>
-                <v-list-tile-title> <div style="border:1px solid #ddd;" /></v-list-tile-title>
+                <v-list-tile-title> <div style="border:1px solid #ddd; margin-top:10px;" /></v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
               <v-list-tile-title>
-                <a href="/markets"><b>Markets</b></a>
+                <a href="/markets"><b>markets</b></a>
               </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
