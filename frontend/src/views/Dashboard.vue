@@ -145,7 +145,7 @@ export default {
         {
           label: 'Revenue',
           data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-          borderColor: '#333333',
+          borderColor: '#999999',
           fill: false
         }
       ],
@@ -156,7 +156,7 @@ export default {
         {
           label: 'Customers',
           data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-          borderColor: '#333333',
+          borderColor: '#999999',
           fill: false
         }
       ],
