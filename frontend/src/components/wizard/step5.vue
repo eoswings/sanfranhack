@@ -9,7 +9,7 @@
     
             <center>
                 <div style="max-width:400px;">
-                    <vue-slider v-model="data"></vue-slider>
+                    <vue-slider :value=5 :min=0 :max=10 :dotSize=48 height=32></vue-slider>
                 </div>
             </center>
 

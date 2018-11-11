@@ -8,8 +8,6 @@
     
             <div class="spacer" />
             <textarea></textarea>
-            <div class="spacer" />
-            <button class="button">Next</button>
         </div>
     </template>
     

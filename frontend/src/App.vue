@@ -30,7 +30,7 @@
     padding:10px;
   }
 
-  .button {
+  .next_button {
     -moz-box-shadow: inset 0px 1px 0px 0px #fce2c1;
     -webkit-box-shadow: inset 0px 1px 0px 0px #fce2c1;
     box-shadow: inset 0px 1px 0px 0px #fce2c1;
@@ -56,7 +56,7 @@
     text-shadow: 0px 1px 0px #cc9f52;
   }
 
-  .button:hover {
+  .next_button:hover {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477));
     background: -moz-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
     background: -webkit-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
@@ -67,11 +67,12 @@
     background-color: #fb9e25;
   }
 
-  .button:active {
+  .next_button:active {
     position: relative;
     top: 1px;
   }
 
+  .back_button { border:0; cursor:pointer; font-size:16px; }
   .spacer {
     padding: 25px;
   }

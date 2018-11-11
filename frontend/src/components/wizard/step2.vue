@@ -8,8 +8,7 @@
 
         <div class="spacer" />
         <input type="text" placeholder="Second Handys">
-        <div class="spacer" />
-        <button class="button">Next</button>
+
     </div>
 </template>
 

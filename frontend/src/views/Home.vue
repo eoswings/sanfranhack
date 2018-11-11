@@ -6,9 +6,9 @@
     <img alt="Vue logo" src="../assets/woman.png" style="border-radius:50%; width:100px; height:100px; ">
     <step5 />
     <div class="spacer" />
-    <button class="button">Back</button>
-    &nbsp; 
-    <button class="button">Next</button>
+    <button class="back_button">Back</button>
+    &nbsp; &nbsp; &nbsp; 
+    <button class="next_button">Next</button>
   </div>
 </template>
 
