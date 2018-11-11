@@ -17,7 +17,7 @@
       <button class="back_button" v-if="step != 1" @click="step--">Back</button>
       <span v-if="step != 1">&nbsp; &nbsp; &nbsp;</span>
       <button class="next_button" v-if="step < 5" @click="step++">Next</button>
-      <button class="next_button" v-if="step === 5" @click="step=1">Deploy</button>
+      <button class="next_button" v-if="step === 5" @click="deploy()">Deploy</button>
     </div>
   </div>
 </template>
@@ -30,19 +30,26 @@ import step3 from '@/components/wizard/step3.vue'
 import step4 from '@/components/wizard/step4.vue'
 import step5 from '@/components/wizard/step5.vue'
 
-import { mapActions } from 'vuex'
-
 export default {
   name: 'home',
   components: { step1, step2, step3, step4, step5 },
   data() {
     return {
       step: 1,
-      market: {}
+      market: {
+        equity_rate: 5
+      }
     }
   },
   methods: {
-    ...mapActions(['createMarket'])
+    async deploy() {
+      await this.$store.dispatch('createMarket', {
+        id: Math.floor(Math.random() * 2 ** 64),
+        creator: this.$store.state.account,
+        ...this.market,
+        fee: this.market.fee * 100000
+      })
+    }
   }
 }
 </script>
