@@ -9,14 +9,13 @@
 </template>
 
 <script>
-  // @ is an alias to /src
-  import step1 from '@/components/wizard/step1.vue'
+// @ is an alias to /src
+import step1 from '@/components/wizard/step1.vue'
 
-  export default {
-    name: 'home',
-    components: {
-      HelloWorld,
-      step1
-    }
+export default {
+  name: 'home',
+  components: {
+    step1
   }
+}
 </script>
