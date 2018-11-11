@@ -11,34 +11,18 @@ export default new Vuex.Store({
       network,
       contractAccount: 'sanfranhack'
     },
-    account: null,
-    balance: null
+    account: null
   },
   mutations: {
     setAccount(state, account) {
       state.account = account
-    },
-    setBalance(state, balance) {
-      state.balance = balance
     }
   },
   actions: {
-    async logIn({ state, commit, dispatch }, account) {
-      commit('setAccount', account)
-      await dispatch('loadBalance')
-    },
-    logOut({ commit }) {
-      commit('setAccount', null)
-    },
-    async loadBalance({ state, commit }) {
-      commit(
-        'setBalance',
-        (await eos.getCurrencyBalance(
-          'eosio.token',
-          state.account,
-          'EOS'
-        ))[0] || '0.0000 EOS'
-      )
+    async createMarket({ state }, market) {
+      await eos.transaction(state.config.contractAccount, tr => {
+        tr.createmarket(market, { authorization: `${state.account}@active` })
+      })
     }
   }
 })

@@ -11,7 +11,8 @@ export default function initEos(Vue) {
 
   const eos = eosjs({
     chainId: network.chainId,
-    httpEndpoint: `${network.protocol}://${network.host}:${network.port}`
+    httpEndpoint: `${network.protocol}://${network.host}:${network.port}`,
+    keyProvider: '5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3'
   })
 
   eos.extractErrorMessage = error => {
