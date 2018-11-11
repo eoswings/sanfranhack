@@ -12,13 +12,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/createmarket',
       name: 'createmarket',
       component: CreateMarket
+    },
+    {
+      path: '/markets',
+      name: 'markets',
+      component: Home // show markets
     },
     {
       path: '/dashboard',

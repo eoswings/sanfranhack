@@ -22,6 +22,7 @@ export default {
   color: #444;
 }
 
+a { text-decoration: none; font-size:22px; }
 h1 {
   font-size: 50px;
   margin-bottom:0.2em;

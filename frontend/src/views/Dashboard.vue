@@ -12,25 +12,47 @@
         <v-list>
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> Settings </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">Settings</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> Moderation </v-list-tile-title>
+              <v-list-tile-title>
+                <a href="#" style="color:#555">Moderation</a>
+              </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> Dispute </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">Dispute</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> Reviews </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">Reviews</a> </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title> <a href="#" style="color:#555">Voting</a> </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title> <div style="border:1px solid #ddd;" /></v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                <a href="/markets"><b>Markets</b></a>
+              </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
@@ -153,7 +175,7 @@ export default {
         {
           label: 'Revenue',
           data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-          borderColor: '#999999',
+          borderColor: '#fda53a',
           fill: false
         }
       ],
@@ -164,7 +186,7 @@ export default {
         {
           label: 'Customers',
           data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-          borderColor: '#999999',
+          borderColor: '#fda53a',
           fill: false
         }
       ],

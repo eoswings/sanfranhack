@@ -44,6 +44,9 @@ export default {
       step: 1,
       loading: false,
       market: {
+        name: 'California Craft Beer',
+        description: 'Buy and sell the best craft and home brews of the region',
+        fee: 0.25,
         equity_rate: 5
       }
     }
