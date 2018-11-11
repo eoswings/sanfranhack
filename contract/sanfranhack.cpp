@@ -8,31 +8,31 @@ using std::string;
 class[[eosio::contract]] sanfranhack : public eosio::contract {
   private:
     struct [[eosio::table]] market_type {
-        eosio::name id;
+        uint64_t id;
         eosio::name creator;
         string name;
         string description;
         uint64_t fee;
         uint64_t equity_rate;
-        uint64_t primary_key() const { return id.value; }
+        uint64_t primary_key() const { return id; }
     };
     typedef eosio::multi_index<"markets"_n, market_type> market_table;
 
     struct [[eosio::table]] product_type {
-        eosio::name id;
-        eosio::name market_id;
+        uint64_t id;
+        uint64_t market_id;
         eosio::name seller;
         string name;
         string description;
         asset price;
-        uint64_t primary_key() const { return id.value; }
+        uint64_t primary_key() const { return id; }
     };
     typedef eosio::multi_index<"products"_n, product_type> product_table;
 
   public:
     using contract::contract;
 
-    [[eosio::action]] void createmarket(eosio::name id, eosio::name creator,
+    [[eosio::action]] void createmarket(uint64_t id, eosio::name creator,
                                         string name, string description,
                                         uint64_t fee, uint64_t equity_rate) {
         eosio_assert(name.length() > 0, "Name cannot be empty");
@@ -43,7 +43,7 @@ class[[eosio::contract]] sanfranhack : public eosio::contract {
 
         market_table markets(_self, _self.value);
 
-        auto existing = markets.find(id.value);
+        auto existing = markets.find(id);
         eosio_assert(existing == markets.end(), "A market with this ID already exists");
 
         markets.emplace(_self, [&](auto &market) {
@@ -56,7 +56,7 @@ class[[eosio::contract]] sanfranhack : public eosio::contract {
         });
     };
 
-    [[eosio::action]] void listproduct(eosio::name market_id, eosio::name id, eosio::name seller,
+    [[eosio::action]] void listproduct(uint64_t market_id, uint64_t id, eosio::name seller,
                                        string name, string description, asset price) {
         eosio_assert(name.length() > 0, "Name cannot be empty");
         eosio_assert(name.length() <= 100, "Name cannot be longer than 100 characters");
@@ -65,10 +65,10 @@ class[[eosio::contract]] sanfranhack : public eosio::contract {
         eosio_assert(price.amount >= 0, "Price cannot be negative");
 
         market_table markets(_self, _self.value);
-        auto &market = markets.get(market_id.value, "Market not found");
+        auto &market = markets.get(market_id, "Market not found");
 
         product_table products(_self, _self.value);
-        auto existing = products.find(id.value);
+        auto existing = products.find(id);
         eosio_assert(existing == products.end(), "A product with this ID already exists");
 
         products.emplace(_self, [&](auto &product) {
@@ -81,12 +81,12 @@ class[[eosio::contract]] sanfranhack : public eosio::contract {
         });
     };
 
-    [[eosio::action]] void buyproduct(eosio::name id, eosio::name buyer) {
+    [[eosio::action]] void buyproduct(uint64_t id, eosio::name buyer) {
         product_table products(_self, _self.value);
-        auto &product = products.get(id.value, "Product not found");
+        auto &product = products.get(id, "Product not found");
 
         market_table markets(_self, _self.value);
-        auto &market = markets.get(product.market_id.value, "Market not found");
+        auto &market = markets.get(product.market_id, "Market not found");
 
         asset fee = product.price * market.fee / 100'000;
 
