@@ -45,16 +45,11 @@
           <v-container class="mb-1" align-center>
             <v-layout row wrap>
               <v-flex xs4 class="my-3">
-                <h1>Volume 24h</h1>
-                <div>$1000</div>
-                <br /><br />
-                <h1>Stakeholders</h1>
-                <h2>325</h2>
+                <line-chart :data="lineChart1Data"></line-chart>
               </v-flex>
 
               <v-flex xs4 class="my-3">
-                <h1>Market Revenue</h1>
-                <div>$120000</div>
+                <line-chart :data="lineChart2Data"></line-chart>
               </v-flex>
 
               <v-flex xs4 class="my-1">
@@ -106,26 +101,30 @@
 </template>
 
 <script>
-import { Doughnut } from 'vue-chartjs';
+import { Doughnut } from 'vue-chartjs'
+import LineChart from '../components/LineChart.vue'
 
 export default {
   components: {
-    Doughnut
+    Doughnut,
+    LineChart
   },
 
   async mounted() {
     var data = [this.marketCreatorEquity]
-      var bgColor = [this.marketCreatorBgColor]
+    var bgColor = [this.marketCreatorBgColor]
 
-      for (var i = 0; i < this.nrStakeHolder; i++) {
+    for (var i = 0; i < this.nrStakeHolder; i++) {
       data.push((1 / this.nrStakeHolder) * 100)
-        var greyFragment = (40 + i * 2).toString(16)
-        bgColor.push('#' + greyFragment + greyFragment + greyFragment)
-      }
+      var greyFragment = (40 + i * 2).toString(16)
+      bgColor.push('#' + greyFragment + greyFragment + greyFragment)
+    }
 
     var labels = ['accounta']
 
-      this.$refs.equityDoughnut.renderChart({
+    console.log(this.$refs)
+
+    this.$refs.equityDoughnut.renderChart({
       datasets: [
         {
           data: data,
@@ -134,13 +133,33 @@ export default {
       ],
       labels: labels
     })
-    },
+  },
 
   data: () => ({
     drawer: true,
     marketCreatorEquity: 50,
     marketCreatorBgColor: '#fda53a',
     nrStakeHolder: 50,
+    lineChart1Data: {
+      datasets: [
+        {
+          data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
+          borderColor: '#c45850',
+          fill: false
+        }
+      ],
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
+    lineChart2Data: {
+      datasets: [
+        {
+          data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
+          borderColor: '#c45850',
+          fill: false
+        }
+      ],
+      labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    },
     topSellerHeaders: [
       {
         text: 'Seller',
@@ -208,13 +227,13 @@ export default {
 
   methods: {
     randomColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
+      var letters = '0123456789ABCDEF'
+      var color = '#'
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)]
-        }
-      return color
       }
+      return color
+    }
   }
 }
 </script>
