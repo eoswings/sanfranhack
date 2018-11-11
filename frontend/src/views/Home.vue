@@ -2,7 +2,7 @@
 
   <div class="home">
     <div style="text-align:left; width:100%;">
-        <img src="../assets/logo.png" style="width:200px;">
+        <img src="../assets/logo2.png" style="width:200px; padding:1.5em">
     </div>
     <div style="text-align:center">
       <div class="spacer" />
