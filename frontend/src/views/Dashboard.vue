@@ -12,41 +12,41 @@
         <v-list>
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> <a href="#">Settings</a> </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">Settings</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
               <v-list-tile-title>
-                <a href="#">Moderation</a>
+                <a href="#" style="color:#555">Moderation</a>
               </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> <a href="#">Dispute</a> </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">Dispute</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> <a href="#">Reviews</a> </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">Reviews</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> <a href="#">Voting</a> </v-list-tile-title>
+              <v-list-tile-title> <a href="#" style="color:#555">Voting</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
-            <v-list-tile-content>
-              <v-list-tile-title> <hr /> </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
+              <v-list-tile-content>
+                <v-list-tile-title> <div style="border:1px solid #ddd;" /></v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
@@ -123,8 +123,8 @@
 </template>
 
 <script>
-import { Doughnut } from 'vue-chartjs';
-import LineChart from '../components/LineChart.vue';
+import { Doughnut } from 'vue-chartjs'
+import LineChart from '../components/LineChart.vue'
 
 export default {
   components: {
@@ -134,19 +134,19 @@ export default {
 
   async mounted() {
     var data = [this.marketCreatorEquity]
-      var bgColor = [this.marketCreatorBgColor]
+    var bgColor = [this.marketCreatorBgColor]
 
-      for (var i = 0; i < this.nrStakeHolder; i++) {
+    for (var i = 0; i < this.nrStakeHolder; i++) {
       data.push((1 / this.nrStakeHolder) * 100)
-        var greyFragment = (40 + i * 2).toString(16)
-        bgColor.push('#' + greyFragment + greyFragment + greyFragment)
-      }
+      var greyFragment = (40 + i * 2).toString(16)
+      bgColor.push('#' + greyFragment + greyFragment + greyFragment)
+    }
 
     var labels = ['accounta']
 
-      console.log(this.$refs)
+    console.log(this.$refs)
 
-      this.$refs.equityDoughnut.renderChart({
+    this.$refs.equityDoughnut.renderChart({
       datasets: [
         {
           data: data,
@@ -155,7 +155,7 @@ export default {
       ],
       labels: labels
     })
-    },
+  },
 
   data: () => ({
     drawer: true,
@@ -251,13 +251,13 @@ export default {
 
   methods: {
     randomColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
+      var letters = '0123456789ABCDEF'
+      var color = '#'
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)]
-        }
-      return color
       }
+      return color
+    }
   }
 }
 </script>
