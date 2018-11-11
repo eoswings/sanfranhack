@@ -16,8 +16,8 @@ export default new Router({
       component: CreateMarket
     },
     {
-      path: '/market',
-      name: 'market',
+      path: '/markets',
+      name: 'markets',
       component: Home // show markets
     },
     {

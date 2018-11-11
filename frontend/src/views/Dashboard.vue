@@ -12,25 +12,47 @@
         <v-list>
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> Settings </v-list-tile-title>
+              <v-list-tile-title> <a href="#">Settings</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> Moderation </v-list-tile-title>
+              <v-list-tile-title>
+                <a href="#">Moderation</a>
+              </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> Dispute </v-list-tile-title>
+              <v-list-tile-title> <a href="#">Dispute</a> </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title> Reviews </v-list-tile-title>
+              <v-list-tile-title> <a href="#">Reviews</a> </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title> <a href="#">Voting</a> </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title> <hr /> </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                <a href="/markets"><b>Markets</b></a>
+              </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
@@ -101,8 +123,8 @@
 </template>
 
 <script>
-import { Doughnut } from 'vue-chartjs'
-import LineChart from '../components/LineChart.vue'
+import { Doughnut } from 'vue-chartjs';
+import LineChart from '../components/LineChart.vue';
 
 export default {
   components: {
@@ -112,19 +134,19 @@ export default {
 
   async mounted() {
     var data = [this.marketCreatorEquity]
-    var bgColor = [this.marketCreatorBgColor]
+      var bgColor = [this.marketCreatorBgColor]
 
-    for (var i = 0; i < this.nrStakeHolder; i++) {
+      for (var i = 0; i < this.nrStakeHolder; i++) {
       data.push((1 / this.nrStakeHolder) * 100)
-      var greyFragment = (40 + i * 2).toString(16)
-      bgColor.push('#' + greyFragment + greyFragment + greyFragment)
-    }
+        var greyFragment = (40 + i * 2).toString(16)
+        bgColor.push('#' + greyFragment + greyFragment + greyFragment)
+      }
 
     var labels = ['accounta']
 
-    console.log(this.$refs)
+      console.log(this.$refs)
 
-    this.$refs.equityDoughnut.renderChart({
+      this.$refs.equityDoughnut.renderChart({
       datasets: [
         {
           data: data,
@@ -133,7 +155,7 @@ export default {
       ],
       labels: labels
     })
-  },
+    },
 
   data: () => ({
     drawer: true,
@@ -145,7 +167,7 @@ export default {
         {
           label: 'Revenue',
           data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-          borderColor: '#999999',
+          borderColor: '#fda53a',
           fill: false
         }
       ],
@@ -156,7 +178,7 @@ export default {
         {
           label: 'Customers',
           data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-          borderColor: '#999999',
+          borderColor: '#fda53a',
           fill: false
         }
       ],
@@ -229,13 +251,13 @@ export default {
 
   methods: {
     randomColor() {
-      var letters = '0123456789ABCDEF'
-      var color = '#'
+      var letters = '0123456789ABCDEF';
+      var color = '#';
       for (var i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)]
-      }
+        }
       return color
-    }
+      }
   }
 }
 </script>
