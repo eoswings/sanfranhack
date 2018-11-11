@@ -1,22 +1,19 @@
 <template>
-    <div class="hello">
+    <div>
 
         <h1>
-            Hey There! <b>I'm Ann.</b>
+            Market Name
         </h1>
-        <h2>Answer a few questions, and we'll deploy a
-            <span class="underline">decentralized marketplace</span> together.</h2>
+        <h2>Give your new market a one or two word name.</h2>
 
         <div class="spacer" />
-        <button class="button">Let's go!</button>
+        <input type="text" placeholder="Second Handys">
+
     </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  name: 'step2',
 }
 </script>

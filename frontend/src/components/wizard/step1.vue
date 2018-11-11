@@ -14,9 +14,6 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  name: 'step1',
 }
 </script>
