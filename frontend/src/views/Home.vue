@@ -1,59 +1,139 @@
 <template>
-
-  <div class="home">
+  <v-app id="inspire">
     <div style="text-align:left; width:100%;">
         <img src="../assets/logo2.png" style="width:200px; padding:1.5em">
     </div>
-    <div style="text-align:center">
-      <div class="spacer" />
-      <img alt="Vue logo" src="../assets/woman.png" style="border-radius:50%; width:100px; height:100px;">
-      <step1 v-if="step === 1"/>
-      <step2 v-else-if="step === 2" :market="market"/>
-      <step3 v-else-if="step === 3" :market="market" />
-      <step4 v-else-if="step === 4" :market="market" />
-      <step5 v-else-if="step === 5" :market="market" />
-      <div class="spacer" />
+    <div>
+      <v-content>
+        <v-layout justify-center align-center>
+          <v-container class="mb-1" align-center>
+            <v-layout row wrap>
+              <v-flex xs12 class="my-3">
+                <v-text-field
+                    solo
+                    class="white--text"
+                    append-icon="search"
+                    label="search ..."
+                ></v-text-field>
+              </v-flex>
 
-      <button class="back_button" v-if="step != 1" @click="step--">Back</button>
-      <span v-if="step != 1">&nbsp; &nbsp; &nbsp;</span>
-      <button class="next_button" v-if="step < 5" @click="step++">Next</button>
-      <button class="next_button" v-if="step === 5" @click="deploy()">Deploy</button>
+              <v-flex xs3 class="my-3">
+                  <v-card>
+                    <v-img
+                    class="white--text"
+                    height="200px"
+                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                    >
+                    <v-container fill-height fluid>
+                        <v-layout fill-height>
+                        <v-flex xs12 align-end flexbox>
+                            <span class="headline">Top 10 Australian beaches</span>
+                        </v-flex>
+                        </v-layout>
+                    </v-container>
+                    </v-img>
+                    <v-card-title>
+                    <div>
+                        <span class="grey--text">Number 10</span><br>
+                        <span>Whitehaven Beach</span><br>
+                        <span>Whitsunday Island, Whitsunday Islands</span>
+                    </div>
+                    </v-card-title>
+                    <v-card-actions>
+                    <v-btn flat color="orange">Share</v-btn>
+                    <v-btn flat color="orange">Explore</v-btn>
+                    </v-card-actions>
+                </v-card>
+              </v-flex>
+
+              <v-flex xs1 class="my-3">
+              </v-flex>
+
+              <v-flex xs3 class="my-3">
+                  <v-card>
+                    <v-img
+                    class="white--text"
+                    height="200px"
+                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                    >
+                    <v-container fill-height fluid>
+                        <v-layout fill-height>
+                        <v-flex xs12 align-end flexbox>
+                            <span class="headline">Top 10 Australian beaches</span>
+                        </v-flex>
+                        </v-layout>
+                    </v-container>
+                    </v-img>
+                    <v-card-title>
+                    <div>
+                        <span class="grey--text">Number 10</span><br>
+                        <span>Whitehaven Beach</span><br>
+                        <span>Whitsunday Island, Whitsunday Islands</span>
+                    </div>
+                    </v-card-title>
+                    <v-card-actions>
+                    <v-btn flat color="orange">Share</v-btn>
+                    <v-btn flat color="orange">Explore</v-btn>
+                    </v-card-actions>
+                </v-card>
+              </v-flex>
+
+              <v-flex xs1 class="my-3">
+              </v-flex>
+
+              <v-flex xs3 class="my-3">
+                  <v-card>
+                    <v-img
+                    class="white--text"
+                    height="200px"
+                    src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                    >
+                    <v-container fill-height fluid>
+                        <v-layout fill-height>
+                        <v-flex xs12 align-end flexbox>
+                            <span class="headline">Top 10 Australian beaches</span>
+                        </v-flex>
+                        </v-layout>
+                    </v-container>
+                    </v-img>
+                    <v-card-title>
+                    <div>
+                        <span class="grey--text">Number 10</span><br>
+                        <span>Whitehaven Beach</span><br>
+                        <span>Whitsunday Island, Whitsunday Islands</span>
+                    </div>
+                    </v-card-title>
+                    <v-card-actions>
+                    <v-btn flat color="orange">Share</v-btn>
+                    <v-btn flat color="orange">Explore</v-btn>
+                    </v-card-actions>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </v-layout>
+      </v-content>
     </div>
-  </div>
+  </v-app>
 </template>
 
 <script>
-// @ is an alias to /src
-import step1 from '@/components/wizard/step1.vue'
-import step2 from '@/components/wizard/step2.vue'
-import step3 from '@/components/wizard/step3.vue'
-import step4 from '@/components/wizard/step4.vue'
-import step5 from '@/components/wizard/step5.vue'
-
 export default {
-  name: 'home',
-  components: { step1, step2, step3, step4, step5 },
-  data() {
-    return {
-      step: 1,
-      market: {
-        equity_rate: 5
-      }
-    }
+  components: {
   },
-  methods: {
-    async deploy() {
-      let market = {
-        id: Math.floor(Math.random() * 2 ** 64),
-        creator: this.$store.state.account,
-        ...this.market,
-        fee: this.market.fee * 100000
-      }
-      console.log(market)
-      await this.$store.dispatch('createMarket', market)
 
-      this.$router.push('/dashboard')
-    }
+  async mounted() {
+
+  },
+
+  data: () => ({
+
+  }),
+
+  computed: {},
+
+  methods: {
+
   }
 }
 </script>
