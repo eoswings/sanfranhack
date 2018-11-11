@@ -24,6 +24,12 @@
     color: #333;
   }
 
+  input, textarea {
+    font-family: 'Nunito', sans-serif;
+    font-size:40px; 
+    padding:10px;
+  }
+
   .button {
     -moz-box-shadow: inset 0px 1px 0px 0px #fce2c1;
     -webkit-box-shadow: inset 0px 1px 0px 0px #fce2c1;
@@ -73,4 +79,6 @@
   .underline {
     border-bottom: 1px dashed #ccc;
   }
+
+  
 </style>
